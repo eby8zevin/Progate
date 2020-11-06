@@ -133,4 +133,148 @@ Mengelola File dan Folder
 9. Memindah File dan Direktori
     Dari sini, kita akan mempelajari bagaimana menjalankan berbagai operasi seperti memindahkan, menyalin, dan menghapus file dengan command.
     
+    Mari kita mulai dengan command untuk memindahkan sebuah file.
+    Untuk melakukan ini, kita gunakan command mv.
+    Dengan mengetik mv file_yang_dipindahkan direktori_tujuan, Anda dapat memindahkan sebuah file ke direktori yang dispesifikasikan.
     
+    Dengan command mv, Anda juga dapat memindahkan direktori, bukan hanya file.
+    Dengan mengetik mv direktori_yang_dipindahkan direktori_tujuan, Anda dapat memindahkan semua file dan direktori di bawah direktori tersebut.
+    
+    > 1 Tampilkan semua file di direktori awal
+    > ~ $ ls
+    
+    > 2 Pindahkan beginner.txt ke direktori html
+    > ~ $ mv beginner.txt html
+
+    > 3 Pindah ke direktori html
+    > ~ $ cd html
+
+    > 4 Tampilkan file di direktori html
+    > html $ ls
+
+    > 5 Pindah ke direktori home
+    > html $ cd ..
+
+    > 6 Pindahkan direktori html ke direktori languages
+    > ~ $ mv html languages
+
+    > 7 Pindah ke direktori languages
+    > ~ $ cd languages
+
+    > 8 Tampilkan file di dalam direktori languages
+    > languages $ ls
+    
+10. Mengubah Nama File dan Direktori
+    Command mv, yang kita gunakan untuk memindahkan file dan direktori sebelumnya, dapat juga digunakan untuk menamai ulang sebuah file.
+    Anda dapat menamai ulang sebuah file dengan mengetik mv nama_file_lama nama_file_baru.
+    
+    > 1 Pindah ke direktori languages di dalam direktori awal 
+    > ~ $ cd languages
+
+    > 2 Pindah ke direktori html
+    > languages $ cd html
+
+    > 3 Ubah nama beginner.txt ke dojo.txt
+    > html $ mv beginner.txt dojo.txt
+    
+11. Menyalin File dan Direktori
+    Selanjutnya, mari kita lihat bagaimana menyalin file-file.
+    Untuk melakukannya, kita dapat menggunakan command cp.
+    Anda dapat menyalin sebuah file dengan mengetik cp file_yang_disalin nama_file_baru.
+    
+    Dengan command cp, Anda juga dapat menyalin direktori dengan menambahkan pilihan -r (Recursive copy), seperti cp -r directory_yang_disalin nama_directori_baru.
+    
+    Jika Anda mencoba untuk menyalin sebuah direktori tanpa menambahkan pilihan -r, Anda akan mendapat sebuah error dan command tidak akan dijalankan.
+    
+    > 1 Pindah ke direktori languages di dalam direktori awal 
+    > ~ $ cd languages
+
+    > 2 Pindah ke direktori html 
+    > languages $ cd html
+
+    > 3 Salin dojo.txt dan buat project.txt
+    > html $ cp dojo.txt project.txt
+
+    > 4 Tampilkan file di dalam direktori html 
+    > html $ ls
+
+    > 5 Pindah ke direktori languages 
+    > html $ cd ..
+
+    > 6 Salin direktori html dan buat direktori ruby 
+    > languages $ cp -r html ruby
+
+    > 7 Tampilkan file di dalam direktori languages 
+    > languages $ ls
+    
+12. Menghapus File dan Direktori
+    Selanjutnya, mari kita lihat bagaimana menghapus sebuah file.
+    Untuk melakukannya, kita dapat menggunakan command rm, seperti rm file_yang_dihapus.
+    
+    Anda juga dapat menghapus sebuah direktori dengan menambahkan pilihan -r ke command rm, seperti rm -r direktori_yang_dihapus.
+    Seperti command cp, Anda akan mendapat error jika lupa menambahkan -r.
+    
+    > 1 Pindah ke direktori languages di dalam direktori awal
+    > ~ $ cd languages
+
+    > 2 Pindah ke direktori ruby 
+    > languages $ cd ruby
+
+    > 3 Hapus project.txt
+    > ruby $ rm project.txt
+
+    > 4 Tampilkan file di dalam direktori ruby 
+    > ruby $ ls
+
+    > 5 Pindah ke direktori languages 
+    > ruby $ cd ..
+
+    > 6 Hapus direktori html 
+    > languages $ rm -r html
+
+    > 7 Hapus file di dalam direktori languages 
+    > languages $ ls
+    
+13. Ulasan
+    Latihan terakhir adalah meninjau ulang semua command yang sudah kita pelajari. Kita akan membuat sebuah struktur file seperti gambar di bawah. Tapi sebelumnya, ada satu hal     terakhir yang harus kita pelajari.
+    
+    Pada command line, Anda dapat melihat semua sejarah command menggunakan tanda panah ke atas ↑.
+    Ini sangat memudahkan jika Anda ingin menggunakan command yang sudah dijalankan sebelumnya.
+    
+    > 1 Buat direktori website 
+    > ~ $ mkdir website
+
+    > 2 Pindah ke direktori website 
+    > ~ $ cd website
+
+    > 3 Buat direktori top 
+    > website $ mkdir top
+
+    > 4 Pindah ke top 
+    > website $ cd top
+
+    > 5 Buat top.html
+    > top $ touch top.html
+
+    > 6 Buat stylesheet.css
+    > top $ touch stylesheet.css
+
+    > 7 Pindah ke direktori website
+    > top $ cd ..
+
+    > 8 Salin direktori top dan buat direktori about
+    > website $ cp -r top about
+
+    > 9 Pindah ke direktori about 
+    > website $ cd about
+
+    > 10 Ubah nama top.html ke about.html
+    > about $ mv top.html about.html
+
+    > 11 Pindah ke direktori awal 
+    > about $ cd
+
+    > 12 Hapus about.txt
+    > ~ $ rm about.txt
+    
+End ~
