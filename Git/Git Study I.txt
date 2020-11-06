@@ -1,0 +1,108 @@
+Alur Git
+1. Inisialisasi Git
+    Mari Mempelajari Git
+    Saat membuat website, Kemungkinan besar, Anda akan berkolaborasi dengan orang lain.
+    Git adalah tool yang memudahkan Anda untuk melakukan pengembangan dan berkolaborasi dengan tim Anda.
+    Mari kita mempelajari Git dengan Ninja Ken dan Guru Domba!
+    (Anda direkomendasikan untuk menyelesaikan Command Line Study I sebelum pelajaran ini.)
+    
+    Ninja Ken dan Guru Domba akan membuat website bersama-sama.
+    Sementara Ken baru pertama kali mencoba pengembangan tim, Guru Domba sudah ahli. Mari mempelajari Git sambil mengikuti pengalaman pengembangan tim mereka.
+    
+    Git dan Pengembangan Tim
+    
+    N: Aku belum pernah melakukan pengembangan tim sebelumnya. Dari mana aku harus memulai?
+
+    D: Untuk pengembangan tim, kita akan menggunakan Git.
+       Mari kita mulai mempelajari bagaimana menggunakannya sekarang.
+
+    N: Oke, aku siap!
+    
+    D: Git dioperasikan dari terminal.
+       Pertama, untuk memulai, kamu perlu untuk menjalankan command git init.
+       Kamu tidak perlu untuk mengetik $ yang muncul pada terminal.
+       (init= initialize
+    
+    N: Oh. Aku akan mencobanya!
+    
+    > ■ Masukkan command di bawah ke dalam Terminal
+    > git init
+    
+2. Menambahkan File untuk Dibagikan
+    D: Ada 3 langkah pada pengembangan tim.
+       Lihat pada step 2 & 3. Kamu perlu untuk membagikan code yang kamu tulis dengan orang lain untuk melakukan pengembangan tim. Itu gunanya Git.
+       
+       Alur Kerja Git
+       Step 1 = Buat perubahan ke file
+       Step 2 = Persiapan untuk membagikan perubahan
+       Step 3 = Bagikan perubahan
+    
+    N: Aku baru membuat file index.html! Jadi, bagaimana aku bisa membagikannya?
+    
+    D: Pertama, kamu perlu memilih file-file yang ingin kamu bagikan.
+       Untuk memilih sebuah file, gunakan command git add file_name.
+       
+    > ■ Masukkan command ke dalam Terminal
+    > git add index.html
+    
+3. Menyimpan File yang Ditambahkan
+    Merekam File yang Dipilih
+    N: Oke, aku menggunakan git add untuk memilih sebuah file!
+
+    D: Bagus! Ada satu langkah lagi sebelum kita bisa berbagi file.
+       Kita akan simpan file-file yang dipilih dengan pesan. Lalu kita siap untuk membagikannya.
+
+    N: Simpan... ?
+
+    D: Benar. Jangan khawatir jika membingungkan sekarang. Akan lebih mudah sembari kamu belajar lebih jauh mengenai Git.
+    
+    git commit
+    D: Untuk merekam file yang dipilih, jalankan command git commit -m "pesan"
+       Kita menyebut penyimpanan seperti ini sebagai commit. Mohon diingat, ya.
+
+    N: Apakah "pesannya" bisa apa saja?
+
+    D: Pesan tersebut seharusnya mendeskripsikan konten yang mau di commit.
+       Ngomong-ngomong, pesan ini disebut pesan commit dan biasanya pesan ini akan di buat dalam bahasa Inggris untuk mempermudah kerja sama dengan tim internasional.
+       
+    Workflow Pengembangan Tim
+    D: Dengan git add dan git commit, 2 command yang sudah kita pelajari, kamu sudah siap untuk berbagi file.
+       
+       Alur Kerja Git
+       Step 1 Selesai
+       Step 2 Selesai
+    
+    N: Baik! Jadi, kita sudah menyelesaikan langkah 1 dan 2!
+    
+    > ■ Masukkan command ke dalam Terminal
+    > git commit -m "Created index.html"
+    
+4. Menambah Remote Repository
+    Proses Berbagi
+    N: Aku menyelesaikan sebuah commit! Sekarang persiapannya selesai, kan?
+       Tapi, sekarang bagaimana bisa aku membagikan file?
+
+    D: Git menggunakan sesuatu yang disebut remote (atau remote repository) untuk menyimpan file-file yang dibagikan.
+       Pengembang membagikan file dengan mengunggah ke dan mengunduh dari remote.
+       
+    Ninja Ken - "Unggah" > Remote - "Unduh" > Guru Domba
+    
+    Mengatur Remote
+    N: Oke. Jadi aku perlu membuat remote?
+    
+    D: Iya. Tapi kita tidak perlu mengkhawatirkannya sekarang karena kita dapat menggunakan sebuah layanan, seperti Github,  untuk membuatnya dengan mudah.
+       Kali ini aku sudah menyiapkan sebuah remote, jadi kita sudah siap.
+       Aku akan menjelaskan bagaimana cara membuat remote nanti, jadi tidak usah khawatir.
+    
+    Menambah Remote
+    D: Kamu perlu URL remote untuk mengunggah. Ini adalah URL remote yang aku siapkan kali ini https://prog-8.com/mysite.git
+       Saat kamu menambahkan remote, kamu akan memerlukan nama. Biasanya, pengembang menggunakan nama origin.
+       Lebih spesifik, untuk mendaftarkan remote, ketik git remote add remote_name URL, seperti pada gambar di kanan.
+       
+    N: Baik! Aku akan mencobanya!
+    
+    > ■ Masukkan command berikut ke dalam Terminal
+    > git remote add origin https://prog-8.com/mysite.git
+    
+5. Mengunggah File
+    Mengunggah File ke Remote
