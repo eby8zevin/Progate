@@ -106,3 +106,130 @@ Alur Git
     
 5. Mengunggah File
     Mengunggah File ke Remote
+    N: Aku berhasil menambah remote repository ke git!
+
+    D: Oke, sekarang mari coba mengunggah sebuah file ke remote! Kita dapat mengunggah ke remote yang kita buat sebelumnya dengan menjalankan: git push origin master 
+       Mengunggah seperti ini dengan Git disebut push.
+       
+    > ■ Masukkan command berikut ke dalam Terminal
+    > $ git push origin master
+    
+6. Mengunduh File
+    Mengunduh File dari Remote
+    N: Aku telah melakukan push Git!
+
+    D: Bagus, aku akan mengunduh file yang kamu push ke komputerku. Aku dapat mengunduh file dengan menjalankan git pull origin master
+       Mengunduh file seperti ini disebut pull. Kamu harus mengingatnya.
+       
+    > ■ Masukkan command berikut ke dalam Terminal
+    > git pull origin master
+    
+7. Meninjau Alur Git
+    Berlatih Alur Kerja Pengembangan Tim
+    D: Aku bisa pull file yang kamu buat, Ken.
+       Sekarang, mari kita meninjau ulang apa yang sudah kita pelajari sejauh ini. Dengan 4 command di kanan, kita sudah dapat berbagi file satu sama lain.
+    =>add=>commit=>push=>pull=>
+    
+    > ■ Masukkan command berikut ke Terminal Guru Domba
+    > git add stylesheet.css
+    > git commit -m "Create stylesheet.css"
+    > git push origin master
+    
+    > ■ Masukkan command berikut ke Terminal Ninja Ken
+    > git pull origin master
+    
+8. git status
+    Menguasai Git
+    N: Guru Domba, aku sudah menjadi master Git juga!
+
+    D: Wah, jangan sombong dulu.
+       Masih banyak yang perlu dipelajari tentang Git.
+       Ayo kita mulai belajar Git lebih dalam lagi.
+
+    N: Oh... aku akan melakukan yang terbaik!
+    
+    Poin-Poin Penting Mengenai Git
+    D: Dalam pengembangan tim, penting untuk mengenali perubahan-perubahan yang kamu buat dan memilih perubahan apa yang harus kamu bagikan dengan timmu.
+
+    N: Benar. Pasti akan jadi masalah jika aku membagikan code yang tidak komplit tanpa disengaja.
+
+    D: Tepat. Maka dari itu mari kita belajar bagaimana mengenali dan memilih code yang kita bagikan.
+    [Code Komplit] Bagikan ! | [Code tidak Komplit] Jangan di Bagikan!
+    
+    Mengenali File-File yang Dimodifikasi
+    D: Pertama, penting untuk mengenali perubahan-perubahan yang kamu sudah lakukan. 
+       Dengan menggunakan git status, kamu dapat menampilkan daftar file-file yang sudah dimodifikasi.
+
+    N: Oh, bagus, bahkan jika ada banyak file, aku bisa mengetahui dimana saja perubahan sudah dibuat.
+    
+    > ■ Masukkan command berikut ke dalam Terminal
+    > git status
+    
+9. git diff
+    Mengenali Perubahan-Perubahan Konten
+    N: git status benar-benar berguna! Bisakah aku melihat perubahan kontennya juga?
+
+    D: Pertanyaan bagus! Ini adalah command untuk melihat perubahan konten: git diff.
+       Seperti bisa dilihat di kanan, bagian-bagian yang ditambahkan berwarna hijau. 
+
+    N: Itu sangat berguna!
+    
+    Melihat git diff
+    D: Ada lagi. Code yang dimodifikasi akan ditampilkan, seperti bisa dilihat di kanan, dengan code sesudah warnanya hijau dan code sebelum warnanya merah.
+
+    N: Oke. Dengan ini kamu bisa mengenali apa saja yang akan kamu bagikan dengan orang lain.
+
+    D: Benar. Kamu bisa mengonfirmasi perubahan-perubahan dan menjalankan git add dengan percaya diri.
+    
+    > ■ Masukkan command berikut ke dalam Terminal
+    > git diff
+    > git add index.html
+    
+10. git status (2)
+    Mengecek File-File yang Ditambahkan
+    N: Tunggu, file apa yang aku tambahkan sebelumnya? Apakah index.html?
+       Aku lupa file apa saja yang aku tambahkan...
+
+    D: Jika seperti itu, kamu bisa menggunakan git status lagi. Kamu bisa mengecek file mana saja yang sudah atau belum ditambahkan.
+       Saat kamu menjalankan git status, file-file yang ditambahkan akan berwarna hijau dan yang belum ditambahkan berwarna merah.
+       
+    > ■ Masukkan command berikut ke dalam Terminal
+    > git status
+    > git add stylesheet.css
+    
+11. Pesan Commit
+    Menulis Pesan Commit yang Baik
+    N: Oke, sekarang aku bisa mengonfirmasi semua perubahan sebelum aku menjalankan add. Selanjutnya adalah commit. Apakah aku hanya harus mengetik git commit -m "Fix" ?
+
+    D: Oh, tunggu, Ken.
+       Pesan commit itu belum benar.
+       Kamu harus menulis pesan commit yang deskriptif sehingga jika seseorang melihatnya, mereka bisa mengerti dengan mudah perubahan apa yang sudah dibuat.
+
+    N: Oh, baik! Kali ini, aku mengubah warna anak judul. Jadi, bagaimana ini?
+       git commit -m "Change subtitle color"
+
+    D: Ya, ya, lebih seperti itu.
+    
+    > ■ Masukkan command berikut ke dalam Terminal
+    > git commit -m "Change subtitle color"
+    > git push origin master
+    
+12. git log
+    git log
+    N: Sebelumnya kamu bilang aku harus menulis pesan commit yang bisa dimengerti dengan mudah oleh orang lain, tapi bagaimana mereka bisa terlihat?
+
+    D: Pertanyaan bagus, sekali lagi!
+       Dengan menggunakan command git log, kamu atau orang lain dapat melihat commit-commit.
+       
+    git log -p
+    N: Dengan git log, bisakah aku melihat kedua pesan commit dan perubahan-perubahan yang dibuat?
+
+    D: Untuk melihat perubahan-perubahan, kamu bisa menggunakan git log -p.
+       Dengan panah atas dan bawah, kamu dapat bergulir ke seluruh perubahan. Untuk keluar, cukup tekan tombol Q.
+    
+    > ■ Masukkan command berikut ke dalam Terminal
+    > git pull origin master
+    > git log
+    > git log -p
+    
+End ~
