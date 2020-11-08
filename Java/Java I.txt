@@ -1,0 +1,376 @@
+Selamat Datang di Java
+1. Mulai
+Pada pelajaran ini, kita akan mempelajari dasar-dasar Java.
+Anda akan melihat banyak istilah-istilah baru yang mungkin kelihatan sulit, namun jangan khawatir!
+Kita akan mempelajari semuanya satu per satu.
+Apa itu Java?
+Java adalah bahasa pemrograman yang populer yang digunakan di seluruh dunia. Anda dapat mengembangkan berbagai macam hal menggunakan Java, seperti sistem berskala besar, aplikasi web, dan aplikasi mobile.
+※ Java tidak ada hubungannya dengan JavaScript, jadi jangan bingung.
+Mari Menjalankan Java
+Mari menulis code Java pertama Anda. Anda akan melakukannya di dalam file bernama Main.java. Langkah pertama adalah mencetak karakter. Dengan menulis karakter di dalam () dari System.out.println(), Anda dapat mencetaknya pada console.
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello Java");
+  }
+}
+
+2. String
+String
+Pada pelajaran terakhir, kita mencetak karakter di dalam console. Dalam pemrograman, urutan karakter seperti "Hello Java", disebut string. String harus ditutup dengan tanda kutip ganda ", atau error akan terjadi.
+System.out.println
+System.out.println() adalah instruksi untuk mencetak apa yang ada di dalam (). Di pemrograman, Anda dapat memberikan instruksi yang beragam seperti ini kepada komputer. Ayo membiasakan diri dengan System.out.println() karena Anda akan menggunakannya berkali-kali pada pelajaran ini!
+※ l pada "println" adalah huruf kecil dari L.
+Struktur Java
+Setiap file Java mempunyai class. Di dalam class, ada method. Pada contoh di bawah, kita punya class Main, dan method main. Untuk sekarang, hal yang perlu diingat adalah Anda akan menulis code Anda di dalam method main.
+Titik koma
+Java membutuhkan titik koma ; pada akhir tiap statement.
+Tanpa titik koma, Anda akan mendapat error, jadi berhati-hatilah!
+Komentar
+Kita juga dapat menulis komentar didalam code dengan menggunakan tanda // pada awal baris. Komentar akan diabaikan saat Anda menjalankan code, jadi Anda dapat menggunakannya untuk memberikan catatan.
+
+class Main {
+  public static void main(String[] args) {
+    
+    // Baris ini seharusnya adalah komentar
+    
+    // Cetak "Hello Java"
+    System.out.println("Hello Java");
+    
+  }
+
+3. Integer
+Integer
+Anda dapat menggunakan angka seperti integer dalam pemrograman. Tidak seperti string, integer tidak perlu ditutup dengan tanda kutip. Anda dapat menambah dan mengurangi integer seperti yang Anda lakukan dalam matematika, lihat gambar di kiri. Menggunakan spasi sebelum dan sesudah integer tidak diharuskan, tapi itu akan membuat code mudah dibaca.
+Perbedaan Antara String dan Integer
+String dan integer diinterpretasikan secara berbeda dalam pemrograman. Contohnya, 5 + 2 akan mencetak 7, hasil dari penjumlahannya. Akan tetapi, jika Anda memberikan tanda kutip dua " seperti "5 + 2", maka Anda akan membuatnya menjadi string dan hasilnya akan menjadi: 5 + 2.
+
+class Main {
+  public static void main(String[] args) {
+    // Cetak 17 sebagai integer
+    System.out.println(17);
+    
+    // Cetak jumlah dari 5 dan 3
+    System.out.println(5 + 3);
+    
+    // Cetak "5 + 3" sebagai string
+    System.out.println("5 + 3");
+    
+  }
+}
+
+4.Kalkulasi
+Kalkulasi Lain
+Di dalam Java, Anda dapat melakukan kalkulasi lain seperti perkalian dan pembagian, namun dengan simbol berbeda dari apa yang Anda gunakan dalam matematika. Operator * untuk perkalian dan / untuk pembagian. Anda juga dapat menghitung modulo (hasil sisa pembagian) menggunakan operator %.
+
+class Main {
+  public static void main(String[] args) {
+    // Cetak hasil 12 dibagi 3
+    System.out.println(12 / 3);
+    
+    // Cetak hasil 3 dikali 6
+    System.out.println(3 * 6);
+    
+    // Cetak sisah dari 8 dibagi 3
+    System.out.println(8 % 3);
+    
+  }
+}
+
+5. Penggabungan String
+Penggabungan String
+Tanda + yang kita gunakan untuk penjumlahan juga dapat digunakan untuk menggabungkan string. Penggabungan string disebut concatenation. Seperti pada gambar di bawah, "5" + "3" akan menggabungkan dua string menjadi "53", bukan menambahkannya sebagai angka. Ingatlah selalu akan perbedaan antara integer dan string.
+
+class Main {
+  public static void main(String[] args) {
+    // Gabungkan dan cetak "Hello" dan "World"
+    System.out.println("Hello" + "World");
+    
+    // Gabungkan dan cetak "38" dan "19"
+    System.out.println("38" + "19");
+    
+    // Jumlahkan dan cetak 38 dan 19
+    System.out.println(38 + 19);
+  }
+}
+
+6. Variable
+Tipe-Tipe Data
+Sejauh ini, kita sudah bekerja dengan dua tipe nilai, string dan integer. Ini disebut tipe-tipe data. Ada tipe data lain tapi mari kita bahas dua tipe yang sudah kita pelajari, String dan int. Perlu diingat bahwa huruf pertama String adalah kapital sedangkan int tidak.
+(Jangan mengkhawatirkan alasannya untuk sekarang.)
+Apa Itu Variable?
+Dari sini, kita akan belajar tentang variable. Terdengar sulit, namun anggap saja itu sebagai sebuah kotak dimana Anda dapat menyimpan nilai. Selain itu, kotak (variable) mempunyai nama yang dapat digunakan kapan saja untuk mengambil nilai dari variable. Variable adalah bagian yang penting dari pemrograman, jadi pastikan Anda memahaminya.
+Mendeklarasikan Variable
+Anda terlebih dahulu harus mendeklarasikan variable sebelum menyimpan nilai di dalamnya. Dengan mendeklarasikan variable, sebuah kotak akan dibuat dan akan dapat menyimpan nilai.
+Ada dua langkah untuk mendeklarasikan variable di dalam Java:
+1) Spesifikasikan tipe data nilai.
+2) Tentukan nama untuk variable.
+Menetapkan Nilai
+Setelah mendeklarasikan variable, Anda perlu menetapkan nilai. Anda dapat melakukannya dengan format berikut:
+variableName = nilai. Operator = di dalam Java bukan merupakan "sama dengan", melainkan assignment operator yang artinya menetapkan nilai di kanan untuk variable di sebelah kiri. Perlu diingat bahwa nama variable tidak ditutup dengan tanda kutip dua.
+Menggunakan Variable
+Nilai sebuah variable akan secara otomatis didapatkan kembali saat Anda menggunakannya. Pada gambar di bawah,
+System.out.println(number) akan mencetak 10, nilai yang disimpan di dalam variable number.
+
+class Main {
+  public static void main(String[] args) {
+    // Deklarasikan variable number dengan tipe int
+    int number;
+    
+    // Tetapkan 3 ke variable number
+    number = 3;
+    
+    // Cetak variable number
+    System.out.println(number);
+    
+    // Deklarasikan variable name dengan tipe String
+    String name;
+    
+    // Tetapkan "Bob" ke variable name 
+    name = "Bob";
+    
+    // Cetak variable name 
+    System.out.println(name);
+    
+  }
+}
+
+7. Menggunakan Variable
+Menginisialisasi Variable
+Anda juga dapat mendeklarasikan variable dan menetapkan nilai ke variable tersebut secara bersamaan, seperti int number = 3; atau String text = "Hello World";. Mendeklarasikan variable dan menetapkan nilai secara bersamaan disebut inisialisasi variable. Mari kita ingat ya!
+Kalkulasi dengan Variable
+Jika variable adalah sebuah integer, Anda dapat melakukan kalkulasi dengannya, sama seperti dengan nilai integer biasa. Anda dapat menggunakannya dengan nilai integer lainnya, atau variable integer.
+Penggabungan Variable
+Sama halnya dengan penggabungan string, Anda juga dapat menggabungkan variable String. Perlu diingat untuk tidak memakai tanda kutip dua untuk variable. Jika Anda melakukannya, maka Anda akan mencetak nama variable, bukan nilai yang disimpan.
+
+class Main {
+  public static void main(String[] args) {
+    int number1 = 3;
+    
+    // Deklarasikan variable number2 dari tipe int, dan tetapkan 7 padanya.
+    int number2 = 7;
+    
+    // Cetak hasil dari number1 * number2
+    System.out.println(number1 * number2);
+    
+    // Tetapkan "Ayo belajar pemrograman" ke variable text
+    String text = "Ayo belajar pemrograman";
+    
+    // Gabungkan variable text dan string yang diberikan, dan cetak hasilnya 
+    System.out.println(text + "  menggunakan Progate");
+    
+  }
+}
+
+8. Memperbarui Variable
+Memperbarui Variable
+Variable dapat diperbarui dengan nilai yang berbeda. Ini dapat dilakukan dengan menetapkan nilai baru untuk variable yang sudah mempunyai nilai, menggunakan =. Pada gambar di bawah, Anda dapat melihat cara memperbarui nilai variable name.
+Kesalahan Umum Dalam Memperbarui Variable
+Saat memperbarui sebuah variable, Anda tidak perlu menspesifikasikan tipenya, karena tipe tersebut sudah pernah dinyatakan. Jika Anda menspesifikasikan sebuah tipe, itu akan diinterpretasikan sebagai variable baru. Ini akan menimbulkan error karena variable tidak boleh mempunyai nama yang sama.
+
+class Main {
+  public static void main(String[] args) {
+    int number = 11;
+    String text = "Ruby";
+    System.out.println(number);
+    System.out.println(text);
+    
+    // Perbarui variable number dengan 9
+    number = 9;
+    
+    // Cetak variable number
+    System.out.println(number);
+    
+    // Perbarui variable text dengan "Java"
+    text = "Java";
+    
+    // Cetak variable text
+    System.out.println(text);
+    
+  }
+}
+
+9. Memperbarui Variable (2)
+Memperbarui Variable (2)
+Untuk memperbarui variable dengan penambahan, Anda hanya perlu menentukan jumlah nilai variable saat ini dengan sebuah angka untuk di tambahkan kembali ke variable tersebut, lihat gambar dibawah untuk lebih jelas. Ini mungkin terlihat aneh, namun ingat bahwa = dalam Java artinya menentukan, bukan sama dengan.
+
+class Main {
+  public static void main(String[] args) {
+    int number = 3;
+    System.out.println(number);
+    
+    // Perbarui variable number dengan menambahkan 7 kepadanya
+    number = number + 7;
+    
+    // Cetak variable number 
+    System.out.println(number);
+      
+  }
+}
+
+10. Memperbarui Variable (3)
+Memperbarui Variable (3)
+Anda bisa menggunakan singkatan seperti pada gambar di bawah saat memperbarui variable yang mempunyai nilai integer. Sintak di bawah ini sering digunakan untuk kalkulasi, jadi mari diingat!
+Standar : X = X + 10; | X = X - 10; | X = X * 10; | X = X / 10; | X = X % 10;
+Singkatan :  X += 10; | X -= 10; | X *= 10; | X /= 10; | X %= 10;
+Menambah 1, Mengurangi 1
+Saat Anda menambah atau mengurangi 1, Anda dapat mempersingkatnya dengan ++ dan --. x++ sama dengan x += 1, dan x-- sama dengan x -= 1. Ini adalah cara penulisan yang lebih mudah, jadi mari kita ingat.
+X = X + 1; -> X += 1; -> X++;
+X = X - 1; -> X -= 1; -> X--;
+
+class Main {
+  public static void main(String[] args) {
+    int number = 8;
+    
+    // Perbarui variable number dengan mengalikannya dengan 7
+    number *= 7;
+    
+    // Cetak variable number
+    System.out.println(number);
+    
+    // Perbarui variable number dengan menambahkannya dengan 1
+    number++;
+    
+    // Cetak variable number
+    System.out.println(number);
+    
+  }
+}
+
+11. Peranan Variable
+Mengapa Menggunakan Variable?
+Kita sudah mempelajari dasar-dasar variable, namun mengapa kita menggunakannya? Salah satu kegunaannya adalah untuk memberitahu apa yang diwakili nilai, sehingga membuat code mudah dibaca. Kegunaan lain adalah penggunaan ulang, Anda dapat menggunakan data yang sama di banyak tempat.
+Tugas Variable
+Mari kita lihat beberapa contoh. Variable berguna saat Anda perlu menggunakan data yang mirip. Pada contoh di bawah, jika Anda ingin mengubah "Java" ke "Python", Anda hanya perlu mengubahnya sekali, bukan tiga kali.
+Aturan Penting
+Ada beberapa aturan dan kebiasaan yang harus diikuti saat mendeklarasikan variable. Pada dasarnya, penamaan variable bebas ditentukan, namun di Java, ada beberapa aturan seperti ditunjukkan di bawah. Saat Anda menggunakan nama variable yang terdiri dari lebih dari dua kata, tiap kata atau singkatan di tengah nama harus dimulai dengan huruf kapital. Ini disebut camelCase.
+Nama Variable
+Selalu gunakan nama variable yang menjelaskan data apa yang dimilikinya. Jika Anda tidak bisa membedakan isi variable dari namanya, code akan sulit dibaca dan kemungkinan Anda untuk membuat kesalahan akan semakin besar. Coba gunakan nama variable yang deskriptif!
+
+class Main {
+  public static void main(String[] args) {
+    int length = 6;
+    int height = 8;
+    
+    // Deklarasikan variable rectangleArea dengan tipe int, dan tetapkan luas persegi panjang kepadanya.
+    int rectangleArea = length * height;
+    
+    // Cetak variable rectangleArea
+    System.out.println(rectangleArea);
+    
+    // Deklarasikan variable triangleArea dengan tipe int, dan tetapkan luas segitiga kepadanya.
+    int triangleArea = length * height / 2;
+    
+    // Cetak variable triangleArea  
+    System.out.println(triangleArea);
+    
+  }
+}
+
+12. Double
+Angka Desimal
+Kita sudah belajar menggunakan tipe int untuk bekerja dengan integer, namun bagaimana jika kita ingin bekerja dengan angka desimal? Kita dapat menggunakan float dan double! Tetapi, didalam pelajaran ini kita hanya akan menggunakan double. Ada banyak tipe data Java lainnya, silakan melakukan pencarian "Tipe Data Java" di internet jika Anda tertarik! Perhatian: untuk pemrograman, angka desimal dipisahkan dengan titik, bukan koma.
+5 = int
+3.14 = double
+Tipe Double
+Angka seperti 3 dan -39 termasuk dalam tipe int, yaitu integer.
+Sedangkan tipe double adalah untuk angka dengan titik desimal, seperti 3.28 dan -5.7. Jadi, angka 3 akan diklasifikasikan sebagai int sementara 3.0 sebagai double, meskipun jumlahnya sama. Anda dapat mencetaknya dengan cara yang sama seperti pada saat Anda mencetak nilai int.
+Menghitung Desimal
+Karena tipe double adalah untuk angka dengan desimal, Anda dapat melakukan kalkulasi layaknya seperti yang Anda lalukan dengan integer.
+
+class Main {
+  public static void main(String[] args) {
+    // Deklarasikan variable number1 bertipe double, dan tetapkan 8.5 kepadanya
+    double number1 = 8.5;
+    
+    // Deklarasikan variable number2 dengan tipe double, dan tetapkan 3.4 kepadanya
+    double number2 = 3.4;
+    
+    // Cetak hasil dari number1 + number2
+    System.out.println(number1 + number2);
+    
+    // Cetak hasil dari number1 - number2
+    System.out.println(number1 - number2);
+    
+  }
+}
+
+13. Konversi Tipe Implicit
+Konversi Tipe
+Kita sudah belajar tentang penggabungan string, tapi apakah kita bisa menggabungkan integer dan string? Tentu saja! Anda dapat menggunakan konversi tipe. Pada Java, tipe data dapat dikonversikan secara implisit dan eksplisit. Pada contoh dibawah, 23 dikonversi menjadi "23". Ini karena int dikonversi menjadi String secara implisit saat Anda menambahkannya.
+Aturan Kalkulasi
+Sebelum belajar tentang konversi tipe implisit diantara int dan double, ada satu aturan penting. Perhitungan diantara dua tipe identik (sama) akan mengembalikan tipe yang sama. Contoh 5 / 2 akan mengembalikan 2, bukan 2.5.
+Kalkulasi int dan double
+Apa yang terjadi jika kita melakukan perhitungan dengan int dan double? Pada kasus ini, int secara implisit akan dikonversi menjadi double sehingga hasilnya akan menjadi double. Jadi, baik 5 / 2.0 atau 5.0 / 2 hasil yang diberi akan menjadi 2.5. Karena integer dapat diekspresikan sebagai angka dengan titik desimal (seperti 5 dan 5.0), Java secara otomatis mengonversinya.
+
+class Main {
+  public static void main(String[] args) {
+    int month = 12;
+    int date = 31;
+    
+    // Gabungkan variable dengan "/" untuk mencetak "12/31"
+    System.out.println(month + "/" + date);
+    
+    // Cetak hasil dari 7 / 2
+    System.out.println(7 / 2);
+    
+    // Cetak hasil dari 7.0 / 2.0
+    System.out.println(7.0 / 2.0);
+    
+    // Cetak hasil dari 7 / 2.0
+    System.out.println(7 / 2.0);
+    
+  }
+}
+
+14. Konversi Tipe Explicit
+Menghitung Angka-Angka Tipe int
+Kita sudah mengetahui bahwa 5 / 2, perhitungan antara dua integer, akan menghasilkan 2. Apa yang harus kita lakukan jika kita ingin mencari nilai yang lebih akurat saat membagi integer dengan integer lain?
+Cast
+Konversi tipe eksplisit, disebut juga casting, akan menyelesaikan masalah kita. Anda dapat mengonversikan sebuah integer ke double dengan casting, seperti pada gambar di bawah.
+※ Anda hanya perlu untuk cast salah satu integer ke double, seperti yang kita pelajari di pelajaran sebelumnya.
+
+class Main {
+  public static void main(String[] args) {
+    int number1 = 7;
+    int number2 = 2;
+    System.out.println(number1 / number2);
+    
+    // Cast number1 menjadi double, lalu bagikan dengan number2, dan cetak hasilnya
+    System.out.println((double)number1 / number2);
+    
+  }
+}
+
+15. Proyek Akhir
+Proyek Akhir
+Waktunya mengerjakan proyek akhir. Anda akan membuat program yang mencetak nama, umur, tinggi, berat badan, dan BMI Anda. Mari kita coba!
+
+class Main {
+  public static void main(String[] args) {
+    // Tetapkan string ke variable name
+    String name = "Kate Jones";
+    
+    // Tetapkan int ke variable age
+    int age = 27;
+    
+    // Tetapkan double ke variable height (contoh: 1.6)
+    double height = 1.6;
+    
+    // Tetapkan double ke variable weight (contoh: 50.0)
+    double weight = 50.0;
+    
+    // Kalkulasikan BMI dan tetapkan hasilnya ke variable bmi
+    double bmi = weight / height / height;
+    
+    // Cetak name, age, height, weight, dan bmi
+    System.out.println("Nama saya adalah " + name);
+    System.out.println("Saya berusia " + age + " tahun");
+    System.out.println("Tinggi saya adalah " + height + " meter");
+    System.out.println("Berat saya adalah " + weight + " kilogram");
+    System.out.println("BMI saya adalah " + bmi);
+    
+  }
+}
+
+Next Java II
