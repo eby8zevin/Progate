@@ -9,4 +9,212 @@ Operator Perbandingan
 Operator perbandingan akan membandingkan dua nilai, dan mengembalikan true atau false. Contoh, x == y akan memeriksa apakah x dan y merujuk ke nilai yang sama. Hasilnya akan menjadi true jika iya, dan false jika tidak. Pastikan Anda tidak bingung dengan = (tetapkan) dan == (bandingkan).
 6 + 2 == ... false
 6 + 2 != ... true
+6 / 3 == ... true
+6 / 3 != ... false
+Mencetak Boolean
+Anda juga dapat mencetak boolean. Namun, Anda tidak bisa memasukkan true dan false dalam tanda kutip, jadi berhati-hatilah! Saat operator perbandingan mengembalikan nilai boolean, mereka juga akan dicetak sebagai true atau false.
+
+class Main {
+  public static void main(String[] args) {
+    // Cetak true
+    System.out.println(true);
+    
+    // Cetak false
+    System.out.println(false);
+    
+    // Bandingkan nilai menggunakan == dan cetak hasilnya
+    System.out.println(12 / 4 == 3);
+    
+    // Bandingkan nilai menggunakan != dan cetak hasilnya
+    System.out.println(12 / 4 != 3);  
+    
+    // Deklarasikan variable bool bertipe boolean, dan tetapkan hasil 3 * 9 == 27 kepadanya
+    boolean bool = 3 * 9 == 27;
+    
+    // Cetak nilai dari variable bool
+    System.out.println(bool);
+  }
+}
+
+2. Operator Perbandingan (2)
+Operator Perbandingan
+Sama seperti matematika, Anda dapat menggunakan < dan > untuk membandingkan angka. Anda juga dapat menggunakan lebih besar dari atau sama dengan >= dan kurang dari atau sama dengan <= jika Anda ingin menjadikan perbandingannya inklusif.
+4 + 2 > 6 ... false
+4 + 2 >= 6 ... true
+8 / 4 < 2 ... false
+8 / 4 <= 2 ... true
+
+class Main {
+  public static void main(String[] args) {
+    // Bandingkan 8 dan 5 dengan < atau > untuk mencetak false
+    System.out.println(8 < 5);
+    
+    // Bandingkan 3 dan 2 dengan <= atau >= untuk mencetak true
+    System.out.println(3 >= 2);
+    
+  }
+}
+
+3. Operator Logika
+&& (DAN)
+Operator logika digunakan untuk mengekspresikan hubungan seperti DAN, ATAU, dan BUKAN.&& digunakan untuk mengekspresikan DAN, dan dapat digunakan untuk menggabungkan kondisi. Contohnya, kondisi1 && kondisi2 akan mengembalikan true hanya jika kondisi1 dan kondisi2 adalah true. Ini akan mengembalikan false jika salah satu kondisi1 atau kondisi2 adalah false.
+x = 5  x > 10 && x < 30 ... false       false x true
+x = 20  x > 10 && x < 30 ... true       true x true
+x = 35  x > 10 && x < 30 ... false      true x false
+| | (ATAU)
+|| digunakan untuk ATAU, dan juga bisa digunakan untuk menggabungkan kondisi. Misalnya, kondisi1 || kondisi2 akan mengembalikan true jika salah satu kondisi1 atau kondisi2 mengembalikan true. Lihat contoh di bawah ini!
+x = 5  x < 10 || x > 30 ... true        true x false
+x = 20  x < 10 || x > 30 ... false      false x false
+x = 35  x < 10 || x > 30 ... true       false x true
+! (BUKAN)
+! digunakan untuk BUKAN, dan dapat digunakan untuk meniadakan kondisi. Misalnya, kondisi !(X >= 30) mengembalikan true jika x lebih kecil dari 30 dan false jika x lebih besar dari atau sama dengan 30.
+x = 20  x >= 30 ... false
+        !(x >= 30) ... true
+Ulasan Operator Logika
+Mari kita tinjau operator logika menggunakan dua contoh sederhana di bawah ini. && menghasilkan true hanya jika kedua nilai adalah true sedangkan || mengembalikan true jika salah satu dari mereka adalah true. Pastikan untuk mengingatnya agar dapat menguasai operator logika!
+
+class Main {
+  public static void main(String[] args) {
+    // Gunakan && atau || untuk mencetak true
+    System.out.println(true || false);
+    
+    // Gunakan && atau || untuk mencetak false
+    System.out.println(false && true);
+    
+    // Cetak hasil dari 8 < 5 DAN 3 >= 2
+    System.out.println(8 < 5 && 3 >= 2);
+    
+    // Cetak hasil dari 8 < 5 ATAU 3 >= 2
+    System.out.println(8 < 5 || 3 >= 2);
+    
+    // Cetak hasil yang BUKAN 8 < 5
+    System.out.println(!(8 < 5));
+    
+  }
+}
+
+Control Flow
+4. Statement If
+Control Flow
+Dalam kehidupan sehari-hari, kita membuat keputusan berdasarkan kondisi. Contoh sederhananya adalah, "If (jika) hujan, bawa payung". Dalam pemrograman, ada kalanya kita ingin melakukan hal yang berbeda berdasarkan kondisi tertentu. Ini dikenal sebagai control flow. Untuk pemrograman, control flow adalah pengetahuan yang wajib, jadi mari kita kenali dengan baik!
+Statement if
+Statement if adalah jenis control flow yang paling umum. Dengan meletakkan kondisi di dalam () setelah if, code di dalam {} hanya dijalankan saat kondisinya true. Ini penting, jadi pastikan Anda mengingatnya!
+Menggunakan Statement if
+Mari kita lihat contoh statement if. Boolean, operator perbandingan (==, <, dll) dan operator logika (&&, ||, !) akan sering digunakan dalam kondisi statement if.
+Block
+{ } di dalam statement if disebut block. Kita akan membahas lebih dalam nanti, jadi untuk sekarang yang harus Anda ingat tentang blok adalah bahwa ia menyatukan beberapa baris code. Semua baris di dalam block akan dijalankan ketika kondisinya true. Perhatikan bahwa titik koma ; tidak diperlukan setelah tanda kurung kurawal { }.
+
+class Main {
+  public static void main(String[] args) {
+    // Berikan true sebagai kondisi untuk statement if
+    if (true) {
+      System.out.println("Kondisi adalah true. Cetak...");
+    }
+    
+    // Berikan false sebagai kondisi untuk statement if
+    if (false) {
+      System.out.println("Kondisi adalah false. Tidak mencetak...");
+    }
+    
+    int x = 5;
+    // Jika x lebih besar dari 2, cetak "x lebih besar dari 2"
+    if (x > 2) {
+      System.out.println("x lebih besar dari 2");
+    }
+    
+    // Jika x lebih besar dari 8, cetak "x lebih besar dari 8"
+    if (x > 8) {
+      System.out.println("x lebih besar dari 8");
+    }
+    
+  }
+}
+
+5. else, else if
+else
+Dengan menggunakan statement else, Anda dapat menambahkan beberapa code yang ingin Anda jalankan ketika kondisi statement if adalah false. Pikirkan else seperti permainan ketika Anda tidak memiliki gerakan lagi. Lihat contoh di bawah ini untuk mempelajari sintaksnya. Pastikan untuk memperhatikan posisi kurung kurawal { }.
+else if
+Anda dapat menggunakan statement else if untuk menambahkan kondisi alternatif pada control flow. Contoh kondisi alternatif: A akan dijalankan jika kondisi X adalah true; else if Y adalah true sedangkan X adalah false, maka B akan dijalankan; jika semua kondisi false C akan dijalankan.
+Ketika Beberapa Kondisi Cocok
+Anda dapat menambahkan statement else if sebanyak yang Anda inginkan. Namun, perlu diingat bahwa hanya code yang mengembalikan true pertama yang akan dijalankan.
+
+class Main {
+  public static void main(String[] args) {
+    int number = 12;
+    
+    // Tambahkan statement else dan else if
+    if (number < 10) {
+      System.out.println("Angkanya lebih kecil dari 10");
+    } else if (number < 20) {
+      System.out.println("Angkanya sama dengan atau lebih besar dari 10, tetapi kurang dari 20");
+    } else {
+      System.out.println("Angkanya sama dengan atau lebih besar dari 20");
+    }
+    
+  }
+}
+
+6. Statement switch
+Statement switch
+Statement switch adalah tipe lain dari control flow. Ia menggunakan case, dan case yang cocok dengan nilai dari kondisi akan dijalankan. Jangan lupa untuk meletakkan titik dua : setelah setiap case. Tidak perlu khawatir tentang break dulu!
+Statement if dan Statement switch
+Mari kita bandingkan statement switch dengan statement if. Statement if menambahkan flow berdasarkan kondisi, sedangkan statement switch menambahkan flow berdasarkan nilai. Statement switch lebih baik jika ada banyak kondisi berdasarkan nilai.
+Statement break
+Dengan statement switch, setiap case membutuhkan statement break di akhir. Ini penting karena tanpanya, statement switch tidak akan berakhir. Pastikan untuk menggunakannya saat Anda tidak ingin menjalankan code pada case berikutnya!
+
+class Main {
+  public static void main(String[] args) {
+    int number = 12;
+    
+    // Buat control flow sesuai hasil number % 3
+    switch (number % 3) {
+      case 0:
+        System.out.println("Dapat dibagi 3");
+        break;
+      case 1:
+        System.out.println("Sisanya 1 ketika dibagi 3");
+        break;
+      case 2:
+        System.out.println("Sisanya 2 ketika dibagi 3");
+        break;
+    }
+  }
+}
+
+7. Statement switch (2)
+Case default
+Dalam statement switch, Anda dapat mengatur case default ketika tidak ada case yang cocok. Ini fungsinya mirip dengan else dalam statement if.
+Indentasi
+Bahkan di luar control flow, indentasi adalah spasi yang Anda tambahkan di awal baris. Pada contoh di kiri, sulit untuk melihat baris mana termasuk dalam case yang mana. Dengan membuat indentasi yang tepat, struktur code akan menjadi jelas. Kami menyarankan Anda menggunakan tab atau 2 spasi untuk indentasi.
+
+class Main {
+  public static void main(String[] args) {
+    String grade = "G";
+    
+    // Menggunakan default, cetak "Nilai tidak valid" jika tidak ada case yang cocok
+    switch (grade) {
+      case "A":
+        System.out.println("Sempurna");
+        break;
+      case "B":
+      case "C":  
+        System.out.println("Bagus");
+        break;
+      case "D":
+        System.out.println("Anda lulus");
+        break;
+      case "F":
+        System.out.println("Anda gagal");
+        break;
+      default:
+        System.out.println("Nilai tidak valid");
+        break;
+    }
+  }
+}
+
+8. Loop while
+Loop
+Anda sering kali perlu menjalankan code yang sama berulang kali. Misalnya, Anda mungkin ingin mencetak angka dari 1 sampai 100. Tidak efisien untuk menulis System.out.println () 100 kali. Sebagai gantinya, kita bisa menggunakan loop, juga dikenal sebagai iterasi.
+
 
