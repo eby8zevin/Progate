@@ -9,3 +9,4 @@ Operator Perbandingan
 Operator perbandingan akan membandingkan dua nilai, dan mengembalikan true atau false. Contoh, x == y akan memeriksa apakah x dan y merujuk ke nilai yang sama. Hasilnya akan menjadi true jika iya, dan false jika tidak. Pastikan Anda tidak bingung dengan = (tetapkan) dan == (bandingkan).
 6 + 2 == ... false
 6 + 2 != ... true
+
