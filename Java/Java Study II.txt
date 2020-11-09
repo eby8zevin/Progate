@@ -1,0 +1,11 @@
+Boolean dan Kondisi
+1. Boolean dan Operator Perbandingan
+Fundamental Java
+Pada pelajaran ini, kita akan mempelajari fundamental pemrograman seperti control flow dan iterasi.
+Tenanglah, ini tidak sesulit kedengarannya! Selamat belajar!
+Boolean
+Pertama, kita akan mempelajari tipe data baru yang disebut boolean. Nilai boolean hanya dapat berupa true atau false. Berhati-hatilah agar tidak menggunakan tanda kutip ganda untuk true dan false!
+Operator Perbandingan
+Operator perbandingan akan membandingkan dua nilai, dan mengembalikan true atau false. Contoh, x == y akan memeriksa apakah x dan y merujuk ke nilai yang sama. Hasilnya akan menjadi true jika iya, dan false jika tidak. Pastikan Anda tidak bingung dengan = (tetapkan) dan == (bandingkan).
+6 + 2 == ... false
+6 + 2 != ... true
