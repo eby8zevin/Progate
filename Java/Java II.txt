@@ -216,5 +216,204 @@ class Main {
 8. Loop while
 Loop
 Anda sering kali perlu menjalankan code yang sama berulang kali. Misalnya, Anda mungkin ingin mencetak angka dari 1 sampai 100. Tidak efisien untuk menulis System.out.println () 100 kali. Sebagai gantinya, kita bisa menggunakan loop, juga dikenal sebagai iterasi.
+Loop while
+Salah satu jenis iterasi yang paling umum adalah loop while.
+Loop while ditulis seperti contoh di bawah ini. Code di dalam { } diulang selama kondisi adalah true.
+Bagaimana Loop while Bekerja
+Mari pelajari flow loop while seperti yang ditunjukkan di bawah ini. Pertama, variable diinisialisasi sebelum loop while. Setelah setiap iterasi dari loop while, variable diperbarui dan kondisi diperiksa lagi. Proses yang sama ini dilanjutkan hingga kondisi mengevaluasi false.
+Cara Kerja Loop 1) Inisialisasi variable ->
+                2) Memeriksa kondisi ->
+                3) Iterasi code ->
+                4) Perbarui variable
+Menggunakan Loop while
+Mari kita lihat contoh loop while. Di bawah ini adalah program di mana Ninja Ken melompat 5 kali. Variable diinisialisasi di luar loop dan bertambah 1 setiap kali loop diulang. Kondisi mengevaluasi false di ronde keenam, dan loop berhenti.
+Loop infinite
+Jika Anda lupa menambahkan 1 ke variable i di loop, i tidak akan berubah, dan kondisi akan selalu mengevaluasi true. Ini akan menyebabkan loop infinite, dan akan membebani daya komputer. Anda harus memastikan bahwa loop mengevaluasi false pada titik tertentu.
 
+class Main {
+  public static void main(String[] args) {
+    int number = 10;
+    
+    // Buat loop while yang diulang ketika number lebih besar dari 0
+    while (number > 0) {
+      System.out.println(number);
+      number--;
+    }
+  }
+}
 
+9. Loop for
+Loop fot
+Loop for adalah tipe lain dari loop. Di dalam (), kita menginisialisasi variable, menambahkan kondisi, dan memperbarui variable. Setiap langkah dipisahkan oleh titik koma ; tetapi pastikan bahwa tidak ada titik koma setelah variable terakhir. Anda dapat membandingkan dua jenis loop pada gambar di bawah.
+Cara Kerja Loop 1) Inisialisasi variable ->
+                2) Memeriksa kondisi ->
+                3) Iterasi code ->
+                4) Perbarui variable back to 2)
+Menggunakan Loop for
+Menggunakan loop for, mari kita tulis ulang code untuk membuat Ninja Ken melompat 5 kali. Anda dapat menggunakan loop for atau loop while untuk mengulang code, tetapi loop for sering kali lebih sederhana. Pastikan untuk menguasai kedua loop!
+
+class Main {
+  public static void main(String[] args) {
+    // Buat loop for yang berjalan 10 kali
+    for (int i = 1; i <= 10; i++) {
+      System.out.println("Hitungan loop: " + i);
+    }
+  }
+}
+
+10. break & continue
+Statement break
+Saat Anda ingin keluar dari loop secepatnya, Anda dapat menggunakan statement break. Statement break biasanya digabungkan dengan statement if, seperti pada gambar di bawah. Mereka dapat digunakan dengan cara yang sama dengan loop while.
+Statement continue
+Tidak seperti statement break yang mengakhiri loop, statement continue melewati loop untuk iterasi tertentu. Statement continue bisa digunakan dengan cara yang sama dengan loop for dan loop while.
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("=== loop while ===");
+    int i = 1;
+    while (i < 10) {
+      // Keluar dari loop jika i dapat dibagi 5
+      if (i % 5 == 0) {
+        break;
+      }
+      
+      System.out.println(i);
+      i++;
+    }
+    
+    System.out.println("=== loop for ===");
+    for (int j = 1; j < 10; j++) {
+      // Lewati loop jika j dapat dibagi 3
+      if (j % 3 == 0) {
+        continue;
+      }
+      
+      System.out.println(j);
+    }
+  }
+}
+
+11. Menggunakan Array
+Array
+Di Java, array adalah kumpulan nilai dari tipe data serupa.
+Array dapat mengelola beberapa bagian data, seperti daftar nama, dalam satu variable daripada mendeklarasikannya secara terpisah. Setiap nilai dalam array disebut element.
+Tipe Data Array
+Saat mendeklarasikan variable untuk array, Anda harus meletakkan [] setelah tipe dari setiap element. Misalnya, array dari nilai int akan bertipe int[], dan array nilai String akan bertipe String[].
+Membuat Array
+Anda bisa membuat array dengan menulis nilai di dalam { } dan memisahkannya dengan koma ,. Lihat contoh di bawah ini. Berhati-hatilah agar tidak bingung diantara [] dan { }.
+Nomor Index
+
+Setiap element array diberi nomor posisi seperti
+0, 1, 2, .... Ini disebut nomor index. Perlu diingat bahwa nomor index dimulai dari 0. Anda dapat mengakses element individu dengan menulis namaArray[index].
+
+class Main {
+  public static void main(String[] args) {
+    // Tetapkan daftar nama ke variable names
+    String[] names = {"Ken", "Guru Domba", "Ben"};
+    
+    // Cetak element index 0
+    System.out.println(names[0]);
+    
+    // Cetak element index 2
+    System.out.println(names[2]);
+    
+  }
+}
+
+12. Memperbarui Elemen Array
+Memperbarui Element dari Array
+Mari mencoba memperbarui element dari sebuah array! Setiap element dalam array adalah nilai, sehingga Anda dapat memperbaruinya dengan memberikan nilai yang berbeda kepadanya.
+Ketika Element Tidak Ada
+Anda tidak dapat menetapkan nilai ke index yang tidak ada. Ini akan menghasilkan error, seperti pada contoh di bawah ini!
+
+class Main {
+  public static void main(String[] args) {
+    // Tetapkan daftar bahasa ke variable languages
+    String[] languages = {"Ruby", "PHP", "Python"};
+    
+    // Cetak element index 1
+    System.out.println(languages[1]);
+    
+    // Perbarui element index 1 ke "Java"
+    languages[1] = "Java";
+    
+    // Cetak element index 1
+    System.out.println(languages[1]);
+    
+  }
+}
+
+13. Array dan Loop
+Array dan Loop
+Saat berhadapan dengan array, kita seringkali ingin menerapkan code yang sama untuk memproses setiap element. Anda dapat dengan mudah melakukan ini dengan loop yang telah kita pelajari sebelumnya. Jadi, mari pelajari bagaimana cara menggunakan loop dengan array!
+Array dan Loop for
+Saat Anda ingin mencetak semua element dari sebuah array, tidaklah efisien untuk mengulang code yang sama seperti pada gambar di kiri. Dengan menggunakan loop for dan mengatur kondisi loop ke i < 3 seperti gambar di kanan, Anda dapat dengan mudah mendapatkan nilai dari setiap element dan mencetaknya. Perhatikan bahwa 3 adalah jumlah element di array.
+Panjang Array
+Array memiliki method yang disebut length, yang menghitung jumlah element dalam sebuah array, seperti contoh di gambar kiri. Dengan menggunakan length, Anda dapat mengganti i < 3 (kondisi loop for dari slide sebelumnya) dengan i < names.length seperti yang ditunjukkan pada gambar di kanan. Dengan cara ini Anda tidak perlu menghitung sendiri jumlah element.
+
+class Main {
+  public static void main(String[] args) {
+    String[] names = {"Bob", "Kate", "John"};
+    
+    // Dapatkan element names menggunakan loop for, dan cetak "Nama saya adalah ____"
+    for (int i = 0; i < names.length; i++) {
+      System.out.println("Nama saya adalah " + names[i]);
+    }
+  }
+}
+
+14. Enhanced Loop for
+Enhanced Loop for
+Enhanced loop for adalah tipe khusus dari loop for yang digunakan dengan array. Ini adalah cara yang lebih sederhana untuk menulis loop for. Lihat contoh di bawah untuk sintaks dari enhanced loop for.
+Bagaimana Enhanced Loop for Bekerja
+Enhanced loop for hanya membutuhkan variable sementara di mana setiap element dari array ditetapkan secara berurutan. Dalam contoh di bawah, setiap element dari array names ditetapkan ke variable name, dan kemudian dicetak untuk setiap iterasi.
+Perbandingan Loop for
+Mari berlatih mengubah loop for standar menjadi enhanced loop for. Kita menggunakan nomor index untuk mendapatkan element dalam loop for standar, tetapi dengan enhanced loop for kita bisa mendapatkan element secara langsung. Ingat bagaimana menggunakan enhanced loop for untuk membuat code Anda lebih sederhana!
+
+class Main {
+  public static void main(String[] args) {
+    String[] names = {"Bob", "Kate", "John"};
+    
+    // Dapatkan element names menggunakan enhanced loop for, dan cetak "Nama saya adalah ____"    
+    for (String name : names) {
+      System.out.println("Nama saya adalah " + name);
+    }
+  }
+}
+
+15. Proyek Akhir
+Proyek Akhir
+Dengan menggunakan apa yang telah kita pelajari sejauh ini, mari kita hitung jumlah bilangan ganjil dan jumlah bilangan genap di dalam array integer.
+
+class Main {
+  public static void main(String[] args) {
+    // Tetapkan daftar bilangan ke variable numbers
+    int[] numbers = {1, 4, 6, 9, 13, 16};
+    
+    int oddSum = 0;
+    int evenSum = 0;
+    
+    // Kalkulasikan jumlah bilangan ganjil dan jumlah bilangan genap
+    for (int number: numbers) {
+      if (number % 2 == 0) {
+        evenSum += number;
+      } else {
+        oddSum += number;
+      }
+    }
+ 
+    // ---- Jika ingin menggunakan loop for standar ----
+    // for (int i = 0; i < numbers.length; i++) {
+    //   if (numbers[i] % 2 == 0) {
+    //     evenSum += numbers[i];
+    //   } else {
+    //     oddSum += numbers[i];
+    //   }
+    // }
+
+    System.out.println("Jumlah bilangan ganjil: " + oddSum);
+    System.out.println("Jumlah bilangan genap: " + evenSum);
+  }
+}
+
+Next Java III
