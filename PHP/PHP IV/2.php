@@ -61,7 +61,7 @@ class Menu {
   }
   
   public function hello() {
-    echo 'Saya adalah '.$this->name;
+    echo 'I am '.$this->name;
   }
   
   public function getName() {
@@ -88,27 +88,8 @@ class Menu {
     return $this->getTaxIncludedPrice() * $this->orderCount;
   }
   
-  public function getReviews($reviews) {
-    $reviewsForMenu = array();
-    foreach ($reviews as $review) {
-      if ($review->getMenuName() == $this->name) {
-        $reviewsForMenu[] = $review;
-      }
-    }
-    return $reviewsForMenu;
-  }
-  
-  
   public static function getCount() {
     return self::$count;
-  }
-  
-  public static function findByName($menus, $name) {
-    foreach ($menus as $menu) {
-      if ($menu->getName() == $name) {
-        return $menu;
-      }
-    }
   }
   
 }
@@ -162,8 +143,6 @@ class Food extends Menu {
 <?php
 require_once('drink.php');
 require_once('food.php');
-require_once('review.php');
-require_once('user.php');
 
 $juice = new Drink('JUS', 6, 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/juice.png', 'dingin');
 $coffee = new Drink('KOPI', 5, 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/coffee.png', 'panas');
@@ -171,24 +150,6 @@ $curry = new Food('GULAI', 9, 'https://s3-ap-northeast-1.amazonaws.com/progate/s
 $pasta = new Food('PASTA', 12, 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/pasta.png', 1);
 
 $menus = array($juice, $coffee, $curry, $pasta);
-
-$user1 = new User('Alex', 'pria');
-$user2 = new User('Emma', 'wanita');
-$user3 = new User('Alex', 'wanita');
-$user4 = new User('Chris', 'pria');
-
-$users = array($user1, $user2, $user3, $user4);
-
-$review1 = new Review($juice->getName(), $user1->getId(), 'Yummy');
-$review2 = new Review($curry->getName(), $user1->getId(), 'Sangat sehat');
-$review3 = new Review($coffee->getName(), $user2->getId(), 'Wanginya harum');
-$review4 = new Review($pasta->getName(), $user2->getId(), 'Sausnya enak :)');
-$review5 = new Review($juice->getName(), $user3->getId(), 'Hanya jus jeruk biasa');
-$review6 = new Review($curry->getName(), $user3->getId(), 'Rasanya enak untuk harganya');
-$review7 = new Review($coffee->getName(), $user4->getId(), 'Kepahitannya cukup.');
-$review8 = new Review($pasta->getName(), $user4->getId(), 'Banhan yang digunakan berkualitas.');
-
-$reviews = array($review1, $review2, $review3, $review4, $review5, $review6, $review7, $review8);
 
 ?>
 
@@ -213,6 +174,7 @@ $reviews = array($review1, $review2, $review3, $review4, $review5, $review6, $re
         $orderCount = $_POST[$menu->getName()];
         $menu->setOrderCount($orderCount);
         $totalPayment += $menu->getTotalPrice();
+        
       ?>
       <p class="order-amount">
         <?php echo $menu->getName() ?>
@@ -227,70 +189,10 @@ $reviews = array($review1, $review2, $review3, $review4, $review5, $review6, $re
 </html>
 
 //show.php
-<?php
-require_once('menu.php');
-require_once('data.php');
-
-$menuName = $_GET['name'];
-$menu = Menu::findByName($menus, $menuName);
-
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Progate</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
-</head>
-<body>
-  <div class="review-wrapper">
-    <div class="review-menu-item">
-      <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
-      <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
-  
-      <?php if ($menu instanceof Drink): ?>
-        <p class="menu-item-type"><?php echo $menu->getType() ?></p>
-      <?php else: ?>
-        <?php for ($i = 0; $i < $menu->getSpiciness(); $i++): ?>
-          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" class='icon-spiciness'>
-        <?php endfor ?>
-      <?php endif ?>
-      <p class="price">$<?php echo $menu->getTaxIncludedPrice() ?></p>
-    </div>
-    
-    <div class="review-list-wrapper">
-      <div class="review-list">
-        <div class="review-list-title">
-          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/review.png" class='icon-review'>
-          <h4>Ulasan</h4>
-        </div>
-        <?php $menuReviews = $menu->getReviews($reviews) ?>
-        
-        <?php foreach ($menuReviews as $review): ?>
-          <?php $user = $review->getUser($users) ?>
-          <div class="review-list-item">
-            <div class="review-user">
-              <?php if ($user->getGender() == 'pria'): ?>
-                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/male.png" class='icon-user'>
-              <?php else: ?>
-                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/female.png" class='icon-user'>
-              <?php endif ?>
-              <p><?php echo $user->getName() ?></p>
-            </div>
-            <p class="review-text"><?php echo $review->getBody() ?></p>
-          </div>
-        <?php endforeach ?>
-      </div>
-    </div>
-    <a href="index.php">← Kembali ke Menu</a>
-  </div>
-</body>
-</html>
+Ini adalah show.php
 
 //css
-/* Common CSS */
+/* CSS General */
 * {
   box-sizing: border-box;
 }
@@ -341,7 +243,7 @@ img {
   margin-left: auto;
 }
 
-/* Menu CSS */
+/* CSS Menu */
 .logo {
   font-family: Pacifico, sans-serif;
   font-size: 40px;
@@ -422,7 +324,7 @@ input[type="submit"] {
   letter-spacing: 0.1em;
 }
 
-/* Order CSS */
+/* CSS Order */
 .order-wrapper {
   text-align: center;
   background-color: #F8F8F8;
